@@ -7,7 +7,6 @@ const bubbleSort = arr => {
                 [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
                 swapped = true;
             }
-            console.log(arr)
         }
     } while(swapped);
 
