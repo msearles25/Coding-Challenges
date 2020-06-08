@@ -15,11 +15,15 @@ class Tree {
     add(value) {
         const newNode = new Node(value);
         let current = this.root;
+        // No head/root, create it and then return.
         if(!this.root) {
             this.root = newNode;
             return;
         }
+        // if there is a head, then start a loop as many times as needed.
         while(true) {
+            // if the value is less than the current nodes value, then go
+            // left on the tree.
             if (value < current.value) {
                 if(current.left) {
                     current = current.left;
@@ -28,7 +32,10 @@ class Tree {
                 current.left = newNode;
                 return;
                 
-            } else if(value > current.value){
+            } 
+            // otherwise, if it is larger than the current nodes value
+            // go right on the tree.
+            else {
                 if(current.right) {
                     current = current.right;
                     continue;
